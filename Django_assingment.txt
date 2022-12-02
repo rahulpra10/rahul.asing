@@ -1,0 +1,93 @@
+## why django should be used for web-devlopment ? Explain how you can create a project in django ?
+
+-> Django is a high-level Python web framework that enables rapid development of secure and 
+   maintainable websites. Built by experienced developers, Django takes care of much of the 
+   hassle of web development, so you can focus on writing your app without needing to reinvent the wheel.
+
+
+-> For create a project in Django: 
+  "django-admin startproject Project_name"
+
+## How to check installed version of Django ?
+
+
+-> We have 2 methods for check installed version of django 
+   "python -m django --version"   OR
+   "pip freeze"
+
+
+## Mention what command line used to load data into Django ?
+
+->  To load data into Django we have to use the command line
+    "Django-admin.py loaddata". 
+    The command line will searches the data and loads the contents
+    of the named fixtures into the database.
+
+
+## Explain what does Django-admin.py make message command is used for ?
+
+-> Runs over the entire source tree of the current directory and pulls
+   out all strings marked for translation. It creates (or updates) a 
+   message file in the "Django tree" or "Project and application" directory.
+
+
+## What is .Django URLs? make program to create django urls ?
+
+-> In django, views are python functions which take URL request as parameter 
+and return HTTP response or throw an exeption like 404.Each views needs 
+to be mapped to a corresponduing URL pattern.This is done vis python module 
+called URLconf (URL Configurations) 
+ 
+Ex :- 
+
+"URL (urls.py)"
+
+  path("url_name/"views.function_name,name="name")
+
+  path("index/",views.index,nam="index")
+
+
+"view (function[views.py])"
+
+def index(request):
+    return render(request."index.html")
+
+
+
+
+## What is querryset ? write a program to create new post object in Database ?
+
+-> A QuerrySet is collection of data from Database.A querryset is built up as 
+   a list of objects. QuerrySets makes it easier to get the data you actully need,
+   by allowing us to filter and order the data.
+
+ create a post object in django models.py :-
+
+            class Buyer(models.Model):
+               first_name = models.CharField(max_length = 20)
+               last_name = models.CharField(max_length = 20)
+               address = models.TextField(max_length = 200)
+               email = models.EmailField(unique=True)
+               mobile = models.CharField(max_length = 15)
+               password = models.CharField(max_length = 50)
+               pic = models.FileField(upload_to= "profile/", default="avtar.webp")
+               dob = models.DateField(null= True ,blank=True)
+               gender = models.CharField(max_length = 10)
+
+               def __str__(self)-> str:
+                  return self.first_name
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+      
